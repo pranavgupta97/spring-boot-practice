@@ -2,12 +2,17 @@ package com.example.springbootpractice.service;
 
 import com.example.springbootpractice.dao.PersonDao;
 import com.example.springbootpractice.model.Person;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PersonService {
 
     private final PersonDao personDao;
 
-    public PersonService(PersonDao personDao) {
+    @Autowired
+    public PersonService(@Qualifier("fakeDao") PersonDao personDao) {
         this.personDao = personDao;
     }
 

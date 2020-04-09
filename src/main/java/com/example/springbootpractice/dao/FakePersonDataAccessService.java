@@ -29,7 +29,7 @@ public class FakePersonDataAccessService implements PersonDao {
                     int indexOfPersonToUpdate = dataBase.indexOf(currentPerson);
 
                     if (indexOfPersonToUpdate >= 0) {
-                        dataBase.set(indexOfPersonToUpdate, currentPerson);
+                        dataBase.set(indexOfPersonToUpdate, new Person(uuid, person.getName()));
                         return 1;
                     }   else {
                         return 0;
